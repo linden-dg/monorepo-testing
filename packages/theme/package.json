@@ -1,0 +1,9 @@
+{
+  "name": "@spicy-soup/theme",
+  "version": "1.0.0",
+  "files": [
+    "_index.scss",
+    "globals.scss",
+    "css-variables.scss"
+  ]
+}

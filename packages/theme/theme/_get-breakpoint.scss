@@ -1,0 +1,11 @@
+@use "config/breakpoints" as br;
+@use "utils/functions" as fn;
+@use "utils/css-var_fn" as cv;
+
+@function getBreakpoint($type: md) {
+  @return cv.get-var(
+    breakpoints,
+    $type,
+    fn.deep-get(br.$breakpoints, breakpoints, $type)
+  );
+}

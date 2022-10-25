@@ -1,0 +1,103 @@
+@use "../utils/responsive" as br;
+
+/// Mixin to quickly create flex layouts.
+/// @param { String } $justify
+///   flex property 'justify-content'
+/// @param { String } $align
+///   flex property 'align-items'
+/// @param { String } $direction
+///    flex property 'flex-direction'
+/// @param { String } $wrap
+///    flex property 'flex-wrap'
+/// @param { String } $flow
+///    flex property 'flex-flow'
+/// @param { String } $alignContent
+///    flex property 'align-content'
+@mixin flex(
+  $align: false,
+  $justify: false,
+  $direction: false,
+  $wrap: false,
+  $flow: false,
+  $alignContent: false,
+  $inline: false
+) {
+  @if $align {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+  @if $flow {
+    flex-flow: $flow;
+  }
+  @if $alignContent {
+    align-content: $alignContent;
+  }
+  @content;
+}
+
+@mixin flex--desktop($args...) {
+  @include br.desktop {
+    @include flex($args) {
+      @content;
+    }
+  }
+}
+
+@mixin flex--row(
+  $align: false,
+  $justify: false,
+  $wrap: false,
+  $flow: false,
+  $alignContent: false
+) {
+  @include flex($align, $justify, row, $wrap, $flow, $alignContent) {
+    @content;
+  }
+}
+
+@mixin flex--column(
+  $align: false,
+  $justify: false,
+  $wrap: false,
+  $flow: false,
+  $alignContent: false
+) {
+  @include flex($align, $justify, column, $wrap, $flow, $alignContent) {
+    @content;
+  }
+}
+
+@mixin inline--flex(
+  $align: false,
+  $justify: false,
+  $direction: false,
+  $wrap: false,
+  $flow: false,
+  $alignContent: false
+) {
+  @include flex(
+    $align,
+    $justify,
+    $direction,
+    $wrap,
+    $flow,
+    $alignContent,
+    true
+  ) {
+    @content;
+  }
+}

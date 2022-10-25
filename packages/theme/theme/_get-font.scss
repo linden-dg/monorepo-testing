@@ -1,0 +1,40 @@
+@use "sass:map";
+@use "config/typography" as ty;
+@use "utils/functions" as fn;
+@use "utils/css-var_fn" as cv;
+@use "../utils/rem" as r;
+
+@function getFont($type: body) {
+  @return cv.get-var(
+    fonts,
+    $type,
+    fn.deep-get(ty.$defaultTypography, fonts, $type)
+  );
+}
+
+@function getFontWeight($weight: base) {
+  @return cv.get-var(
+    fontWeights,
+    $weight,
+    fn.deep-get(ty.$defaultTypography, fontWeights, $weight)
+  );
+}
+
+@function getFontSize($size: base) {
+  @if (type-of($size) == "number") {
+    @return r.rem($size);
+  }
+  @return cv.get-var(
+    fontSizes,
+    $size,
+    fn.deep-get(ty.$defaultTypography, fontSizes, $size)
+  );
+}
+
+@function getLineHeight($size: base) {
+  @return cv.get-var(
+    lineHeights,
+    $size,
+    fn.deep-get(ty.$defaultTypography, lineHeights, $size)
+  );
+}

@@ -1,0 +1,39 @@
+@use "../theme/get-color" as theme;
+
+@mixin subtle-scrollbar {
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: theme.getColor(white);
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 12px;
+    background-color: theme.getColor(grey, 100);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: theme.getColor(grey, light);
+    border-radius: 3px;
+    border: 0;
+  }
+}
+
+@mixin subtle-horizontal-scrollbar {
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: theme.getColor(white);
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 6px;
+    background-color: theme.getColor(grey, 100);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: theme.getColor(grey, light);
+    border-radius: 3px;
+    border: 0;
+  }
+}

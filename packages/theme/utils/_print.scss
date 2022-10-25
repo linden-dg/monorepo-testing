@@ -1,0 +1,12 @@
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+@mixin no-print {
+  @include print {
+    display: none;
+    @content;
+  }
+}

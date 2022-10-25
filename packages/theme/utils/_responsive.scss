@@ -1,0 +1,31 @@
+@use "../theme/config/breakpoints" as br;
+
+@mixin phone {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx),
+  only screen and (max-width: #{map-get(br.$breakpoints,xs) - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{map-get(br.$breakpoints,xs)}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{map-get(br.$breakpoints,sm)}) {
+    @content;
+  }
+}
+
+@mixin huge {
+  @media (min-width: #{map-get(br.$breakpoints,lg)}) {
+    @content;
+  }
+}

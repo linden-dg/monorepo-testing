@@ -1,0 +1,51 @@
+@use "sass:string";
+@use "../../utils/rem" as r;
+
+$defaultTypography: (
+  fonts: (
+    body: string.unquote('"Montserrat", sans-serif'),
+    headings: string.unquote('"Montserrat", sans-serif'),
+    mono: string.unquote('"Courier New", monospace'),
+  ),
+  fontWeights: (
+    light: 400,
+    normal: 500,
+    medium: 600,
+    bold: 700,
+  ),
+  fontSizes: (
+    tiny: r.rem(10px),
+    xs: r.rem(12px),
+    base: r.rem(14px),
+    sm: r.rem(16px),
+    md: r.rem(18px),
+    lg: r.rem(22px),
+    xl: r.rem(26px),
+    xxl: r.rem(34px),
+    hero: r.rem(42px),
+  ),
+  //lineHeights: (
+  //  tiny: 1.7,
+  //  xs: 1.6,
+  //  base: 1.5,
+  //  sm: 1.5,
+  //  md: 1.45,
+  //  lg: 1.4,
+  //  xl: 1.35,
+  //  xxl: 1.3,
+  //  hero: 1.2,
+  //),
+  lineHeights:
+    (
+      tiny: 1.2,
+      xxs: 1.3,
+      xs: 1.35,
+      sm: 1.4,
+      md: 1.45,
+      base: 1.5,
+      lg: 1.5,
+      xl: 1.6,
+      xxl: 1.7,
+    ),
+  //letterSpacings:(),
+);

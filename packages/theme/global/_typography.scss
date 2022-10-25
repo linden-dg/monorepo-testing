@@ -1,0 +1,103 @@
+@use "../theme/get-font" as fn;
+@use "../theme/get-color" as cl;
+@use "../utils/rem" as r;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -moz-font-feature-settings: "liga" on;
+  box-sizing: border-box;
+  font-size: r.$fontBase;
+}
+
+body {
+  font: #{fn.getFontWeight(normal)} #{fn.getFontSize(base)} #{fn.getFont(body)};
+  color: cl.getColor(text);
+  line-height: fn.getLineHeight(base);
+  letter-spacing: 0.025em;
+}
+
+p {
+  margin-bottom: 1.3em;
+}
+
+$headingFontSizes: (
+  "h1": xxl,
+  "h2": xl,
+  "h3": lg,
+  "h4": md,
+  "h5": sm,
+  "h6": base,
+);
+
+$headingLineHeights: (
+  "h1": tiny,
+  "h2": xxs,
+  "h3": xs,
+  "h4": sm,
+  "h5": md,
+  "h6": lg,
+);
+
+// Loop through each heading size
+@each $name, $size in $headingFontSizes {
+  #{$name} {
+    font: fn.getFontWeight(medium) fn.getFontSize($size) fn.getFont(headings);
+  }
+}
+@each $name, $size in $headingLineHeights {
+  #{$name} {
+    line-height: fn.getLineHeight($size);
+    //margin: 1.414em 0 0.5em;
+  }
+}
+
+h1 {
+  margin: 0 0 0.5em;
+  color: cl.getColor(primary);
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  color: cl.getColor(secondary);
+}
+
+h3,
+h4 {
+  color: cl.getColor(text, dark);
+}
+
+h5,
+h6 {
+  color: cl.getColor(text);
+  //font-weight: fn.getFontWeight(normal);
+}
+
+small,
+h6 {
+  margin: 0.25em 0;
+}
+
+pre {
+  font-family: #{fn.getFont(mono)};
+  font-size: fn.getFontSize(xs);
+  color: cl.getColor(text, dark);
+  background: cl.getColor(gray, 200);
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  padding: 8pt 16pt;
+  max-width: 100%;
+  //max-width: 85%; // Remove later
+  overflow: auto;
+  border: 1px solid #eee;
+}
+
+a {
+  color: cl.getColor(link);
+}
+
+::selection {
+  background-color: cl.getColor(selection);
+}

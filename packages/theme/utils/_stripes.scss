@@ -1,0 +1,9 @@
+@mixin stripes($color: #fff, $size: 5px, $alpha: 0.2) {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent $size,
+    rgba($color, $alpha) $size,
+    rgba($color, $alpha) $size * 2.4
+  );
+}

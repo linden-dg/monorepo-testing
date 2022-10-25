@@ -1,0 +1,11 @@
+@use "config/z" as zi;
+@use "utils/functions" as fn;
+@use "utils/css-var_fn" as cv;
+
+@function getZIndice($type: 1) {
+  @return cv.get-var(
+    zIndices,
+    $type,
+    fn.deep-get(zi.$defaultZindices, zIndices, $type)
+  );
+}

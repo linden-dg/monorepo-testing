@@ -1,0 +1,19 @@
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin psuedo--before($args...) {
+  &::before {
+    @include pseudo($args...);
+    @content;
+  }
+}
+
+@mixin psuedo--after($args...) {
+  &::after {
+    @include pseudo($args...);
+    @content;
+  }
+}

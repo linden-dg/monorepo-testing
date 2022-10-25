@@ -1,0 +1,13 @@
+@use "../theme/get-font" as fn;
+@use "../theme/get-color" as cl;
+@use "../utils/rem" as r;
+@use "../utils/scrollbar" as sc;
+
+body {
+  background: cl.getColor(background);
+  @include sc.subtle-scrollbar();
+  @media print {
+    background: #fff;
+  }
+  margin: 0;
+}

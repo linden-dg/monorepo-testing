@@ -1,0 +1,79 @@
+@use "sass:map";
+@use "theme/config" as theme;
+@use "theme/utils/functions" as fn;
+@use "theme/utils/css-var_fn" as cv;
+
+@mixin createVariables($themePart, $category: false, $suffix: false) {
+  @each $partKey, $val in $themePart {
+    $key: $partKey;
+    $xxx: $partKey;
+
+    @if $category != false {
+      $key: $category;
+
+      @if ($suffix != false) {
+        @if ($xxx == "base") {
+          $xxx: $suffix;
+        } @else {
+          $xxx: "#{$suffix}#{fn.capitalize($partKey)}";
+        }
+      }
+    }
+
+    @if (type-of($val) == "map") {
+      @if $category == false and $suffix == false {
+        $xxx: false;
+      }
+
+      @include createVariables($val, $key, $xxx);
+    } @else {
+      #{cv.get-var-name($key, $xxx)}: #{$val};
+    }
+  }
+}
+
+:root {
+  @include createVariables(theme.$defaultTheme);
+
+  //@each $key, $val in theme.$theme {
+  //  @if type-of($val) == "map" {
+  //    @each $key2, $val2 in $val {
+  //      #{cv.get-var-name($key, $key2)}: $val2;
+  //    }
+  //  } @else {
+  //    #{cv.get-var-name($key, "")}: $val;
+  //  }
+  //}
+
+  //@each $color, $hues in $variable-variations {
+  //  $namedColor: map-get($palettes, $color);
+  //
+  //  @if map-has-key($palettes, $namedColor) {
+  //    $hues: map-get($palettes, $namedColor);
+  //  }
+  //  @each $tone, $val in $hues {
+  //    //--lx-color-#{$color}-#{$tone}: rgb(#{$val});
+  //    #{$prefix}-color-#{$color}-#{$tone}: #{$val};
+  //    #{$prefix}-color-#{$color}-#{$tone}-rgb: #{red($val) +
+  //      ", " +
+  //      green($val) +
+  //      ", " +
+  //      blue($val)};
+  //  }
+  //}
+  //#{$fontBody}: map-get($fonts, body);
+  //#{$fontHeadings}: map-get($fonts, headings);
+  //
+  //#{$fontLight}: map-get($fonts, weight, light);
+  //#{$fontNormal}: map-get($fonts, weight, normal);
+  //#{$fontMedium}: map-get($fonts, weight, medium);
+  //#{$fontBold}: map-get($fonts, weight, bold);
+  //
+  //#{$fontSizeTiny}: map-get($fonts, size, tiny);
+  //#{$fontSizeXs}: map-get($fonts, size, xs);
+  //#{$fontSize}: map-get($fonts, size, base);
+  //#{$fontSizeSm}: map-get($fonts, size, sm);
+  //#{$fontSizeMd}: map-get($fonts, size, md);
+  //#{$fontSizeLg}: map-get($fonts, size, lg);
+  //#{$fontSizeXl}: map-get($fonts, size, xl);
+}

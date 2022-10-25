@@ -1,0 +1,75 @@
+@use "./palettes";
+@use "../utils/functions" as fn;
+
+$common-colors: (
+  "black": #1a1d1e,
+  "white": #ffffff,
+
+  background: #3d3552,
+  foreground: #ffffff,
+
+  selection: #e899e4,
+  link: #1e90b7,
+);
+
+$color-palettes: (
+  text: (
+    base: fn.deep-get(palettes.$palettes, gunsmoke, 600),
+    light: fn.deep-get(palettes.$palettes, gunsmoke, 500),
+    dark: fn.deep-get(palettes.$palettes, gunsmoke, 800),
+    contrast: fn.deep-get(palettes.$palettes, gunsmoke, 200),
+    danger: fn.deep-get(palettes.$palettes, watermelon, 800),
+    success: fn.deep-get(palettes.$palettes, meadow, 800),
+  ),
+  primary: map-get(palettes.$palettes, gigas),
+  secondary: map-get(palettes.$palettes, aquarius),
+  accent: map-get(palettes.$palettes, tradewind),
+  success: map-get(palettes.$palettes, meadow),
+  info: map-get(palettes.$palettes, freefall),
+  warning: map-get(palettes.$palettes, sunflower),
+  danger: map-get(palettes.$palettes, watermelon),
+  "gray": map-get(palettes.$palettes, gunsmoke),
+);
+
+//$dark-palettes:(
+//
+//  text: (
+//    light: fn.deep-get(palettes.$palettes, gunsmoke, 800),
+//    base: fn.deep-get(palettes.$palettes, gunsmoke, 500),
+//    dark: fn.deep-get(palettes.$palettes, gunsmoke, 200),
+//    contrast: fn.deep-get(palettes.$palettes, gunsmoke, 900),
+//
+//    danger:fn.deep-get(palettes.$palettes, watermelon, 800),
+//    success:fn.deep-get(palettes.$palettes, meadow, 800),
+//  ),
+//);
+
+$toneMap: (
+  "extraLight": 100,
+  "lightest": 200,
+  "lighter": 300,
+  "light": 400,
+  "base": 500,
+  "dark": 600,
+  "darker": 700,
+  "darkest": 800,
+  "extraDark": 900,
+  "ExtraLight": 100,
+  "Lightest": 200,
+  "Lighter": 300,
+  "Light": 400,
+  "Base": 500,
+  "Dark": 600,
+  "Darker": 700,
+  "Darkest": 800,
+  "ExtraDark": 900,
+  "100": 100,
+  "200": 200,
+  "300": 300,
+  "400": 400,
+  "500": 500,
+  "600": 600,
+  "700": 700,
+  "800": 800,
+  "900": 900,
+);
