@@ -14,7 +14,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@spicy-soup/eslint": "*",
+    "eslint-config-spicy": "*",
     "husky": "^8.0.1",
     "prettier": "latest",
     "turbo": "latest"

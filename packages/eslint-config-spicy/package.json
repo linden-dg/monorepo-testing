@@ -1,5 +1,5 @@
 {
-  "name": "@spicy-soup/eslint",
+  "name": "eslint-config-spicy",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
