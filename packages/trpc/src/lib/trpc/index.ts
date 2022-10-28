@@ -1,9 +1,9 @@
 import { initTRPC } from "@trpc/server";
-import superjson from "superjson";
 import type { Context } from "./context";
+import { transformer } from "./transformer";
 
 export const t = initTRPC.context<Context>().create({
-  transformer: superjson,
+  transformer,
   /**
    * @see https://trpc.io/docs/v10/error-formatting
    */

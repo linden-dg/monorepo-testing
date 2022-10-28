@@ -8,6 +8,7 @@ declare type ThemeVariants =
   | "default"
   | "primary"
   | "secondary"
+  | "accent"
   | "success"
   | "info"
   | "warning"

@@ -1,0 +1,64 @@
+@use "@spicy-soup/theme" as theme;
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: theme.getSpacing(xs) theme.getSpacing(md);
+  line-height: theme.getLineHeight(xxs);
+  font-size: theme.getFontSize(base);
+  text-transform: uppercase;
+  border: 2px solid theme.getColor(primary);
+  color: theme.getColor(primary);
+  font-weight: theme.getFontWeight(medium);
+  letter-spacing: 0.06em;
+  //transition: 0.7s;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: theme.getColor(white);
+  border-radius: theme.getRadius(md);
+  margin: theme.getSpacing(xxs);
+  text-align: center;
+  text-decoration: none;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition-property: background-color, border-color, box-shadow, color,
+    transform, -webkit-box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in;
+  &:hover,
+  &:focus {
+    outline: 0;
+  }
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    &:not(.submitting) {
+      opacity: 0.4;
+    }
+  }
+  @include theme.desktop {
+    &:hover {
+      border-color: theme.getColor(primary, dark);
+      color: theme.getColor(primary, dark);
+    }
+    &:not(.noHover) {
+      &:hover,
+      &:focus,
+      &:focus-within {
+        transform: scale(1.04);
+        &:active {
+          transform: scale(0.996);
+        }
+      }
+    }
+  }
+  &.submitting {
+    .loader {
+      color: theme.getColor(primary, 500);
+      position: absolute;
+      top: calc(50% - 8px);
+      left: calc(50% - 30px);
+    }
+  }
+}

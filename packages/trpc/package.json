@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "sideEffects": false,
   "scripts": {
-    "lint": "eslint \"src/**/*.ts*\""
+    "lint": "eslint \"src/**/*.ts*\"",
+    "build": "tsup ./client.ts ./server.ts --format esm,cjs --dts ",
+    "dev": "tsup ./client.ts ./server.ts --format esm,cjs --watch --dts "
   },
   "exports": {
     "./client": "./client.ts",
@@ -14,6 +16,7 @@
     "server.ts"
   ],
   "dependencies": {
+    "@spicy-soup/utils": "*",
     "@trpc/client": "^10.0.0-proxy-beta.26",
     "@trpc/next": "^10.0.0-proxy-beta.26",
     "@trpc/server": "^10.0.0-proxy-beta.26",
@@ -23,7 +26,7 @@
     "zod": "^3.19.1"
   },
   "devDependencies": {
-    "eslint-config-spicy": "*",
+    "@spicy-soup/eslint-config": "*",
     "@spicy-soup/tsconfig": "*",
     "@types/spicy-soup": "*",
     "typescript": "^4.5.2"

@@ -1,3 +1,3 @@
 import { publicProcedure } from "../procedures/public";
 
-export const healthCheck = publicProcedure.query(() => "woop woop!")
+export const healthCheck = publicProcedure.query(() => "woop woop!");
