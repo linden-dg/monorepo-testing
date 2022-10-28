@@ -1,0 +1,50 @@
+@use "@spicy-soup/theme" as theme;
+
+.root {
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+$skewPadding: calc(100vw * 0.09719);
+$clipPadding: calc(100vw * 0.09719);
+//$polygon: 0% calc($clipPadding * 2), 100% 0%, 100% 100%, 0% 100%;
+$polygon: 0% 0%, 100% 0%, 100% 40%, 0% 100%;
+.slant {
+  width: 100vw;
+  height: 600px;
+  position: relative;
+  margin: 0 auto;
+  //margin-top: calc(($clipPadding * -1) - 2px);
+  //padding: calc(($clipPadding * 2) - ($clipPadding - $skewPadding)) 0 4em;
+  //& >* {
+  //  z-index: 2;
+  //}
+  //padding: 200px;
+
+  //&:before{
+  //  content: "";
+  //  position: absolute;
+  //  left: 0;
+  //  top: 0;
+  //  right: 0;
+  //  bottom: 70%;
+  //  background-color: theme.getColor(background);
+  //}
+  &:before {
+    background-color: theme.getColor(background);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 20%;
+    clip-path: polygon($polygon);
+  }
+
+}
+
+.content{
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 300px;
+}

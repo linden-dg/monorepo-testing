@@ -1,0 +1,64 @@
+@use "@spicy-soup/theme" as theme;
+
+.loader {
+  position: relative;
+  width: 125px;
+  height: 125px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+}
+
+.loader {
+  &::before {
+    inset: 0;
+    transition: background 1ms ease-in-out;
+  }
+  &:not(.spinning) {
+    &::before {
+      background: #f38575;
+    }
+  }
+  &.spinning {
+    &::before {
+      //background: linear-gradient(
+      //  0deg,
+      //  rgba(#f6dbaa, 0) 60%,
+      //  rgba(#fac090, 0.8) 80%,
+      //  #ee5d62 100%
+      //);
+      background: linear-gradient(
+        0deg,
+        rgba(#ffffff, 0) 60%,
+        //rgba(#ffe0c8, 0.6) 80%,
+        //rgba(#e3a169, 0.8) 85%,
+        #f38575 80%,
+        #ea6958 100% //#ee5d62 100%
+      );
+      animation: rotation 1.5s linear infinite;
+    }
+  }
+}
+
+.loader::after {
+  background: theme.getColor(background);
+  //background: theme.getColor(primary, 200);
+  inset: 5px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5) inset;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
