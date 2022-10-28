@@ -9,5 +9,14 @@ export const getServerAuthSession = async (ctx: {
   res: GetServerSidePropsContext["res"];
 }) => {
   // return await unstable_getServerSession(ctx.req, ctx.res, authOptions());
-  return ctx ? { user: { name: "Testing" } } : null;
+  return ctx
+    ? {
+        user: {
+          id: "pop",
+          name: "Testing",
+          email: "test@test.com",
+          role: "admin",
+        },
+      }
+    : null;
 };

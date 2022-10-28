@@ -5,9 +5,17 @@ import { getServerAuthSession } from "./get-server-auth-session";
 // import { prisma } from "~/lib/prisma/prisma";
 // import { getServerAuthSession } from "~/lib/trpc/get-server-auth-session";
 
+type ISession = {
+  user: {
+    id: string;
+    name: string;
+    email: string;
+    role?: string;
+    groups?: string[];
+  };
+};
 type CreateContextOptions = {
-  // session: Session | null;
-  session: { user: TObjectAny } | null;
+  session: ISession | null;
 };
 
 /** Use this helper for:

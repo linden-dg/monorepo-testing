@@ -1,12 +1,15 @@
 import { z } from "zod";
-import { publicProcedure, router } from "../lib/trpc";
+import { router } from "../lib/trpc";
+import { loggedProcedure } from "../procedures/logger";
 
 export const helloRouter = router({
-  world: publicProcedure
+  world: loggedProcedure
     .input(
-      z.object({
-        text: z.string().nullish(),
-      })
+      z
+        .object({
+          text: z.string().nullish(),
+        })
+        .nullish()
     )
-    .query(({ input }) => `Hello ${input.text ?? "World"}!!`),
+    .query(({ input }) => `Hello ${input?.text ?? "World"}!!`),
 });
