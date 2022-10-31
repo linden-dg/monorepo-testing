@@ -18,7 +18,9 @@ node_modules/
 
 # production
 /build
-dist/
+dist
+tmp
+/out-tsc
 
 # misc
 .DS_Store

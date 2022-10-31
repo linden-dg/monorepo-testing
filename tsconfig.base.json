@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@spicy-soup/components": ["packages/components/src/index.tsx"],
+      "@spicy-soup/eslint-config": ["packages/eslint-config/src/*"],
+      "@spicy-soup/theme": ["packages/theme/*"],
+      "@spicy-soup/trpc-server": ["packages/trpc-server/src/index.ts"],
+      "@spicy-soup/utils": ["packages/utils/src/index.ts"]
+    }
+  },
+  "include": ["base.d.ts"],
+  "exclude": ["node_modules", "tmp"]
+}

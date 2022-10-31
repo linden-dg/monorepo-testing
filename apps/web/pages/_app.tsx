@@ -1,5 +1,5 @@
-import { trpc } from "@spicy-soup/trpc/client";
 import type { AppProps } from "next/app";
+import { trpc } from "../utils/client";
 import "@spicy-soup/theme/globals.scss";
 
 interface App

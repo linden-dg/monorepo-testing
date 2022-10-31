@@ -40,10 +40,9 @@ $polygon: 0% 0%, 100% 0%, 100% 40%, 0% 100%;
     bottom: 20%;
     clip-path: polygon($polygon);
   }
-
 }
 
-.content{
+.content {
   max-width: 600px;
   margin: 0 auto;
   padding-top: 300px;

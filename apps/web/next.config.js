@@ -1,5 +1,7 @@
 // @ts-check
 const { env } = require("./env/server.js");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { withNx } = require("@nrwl/next/plugins/with-nx");
 
 /**
  * Don't be scared of the generics here.
@@ -13,12 +15,7 @@ function getConfig(config) {
   return config;
 }
 
-const withTM = require("next-transpile-modules")([
-  "@spicy-soup/components",
-  "@spicy-soup/trpc",
-]);
-
-module.exports = withTM(
+module.exports = withNx(
   getConfig({
     /**
      * Dynamic configuration available for the browser and server.
@@ -28,6 +25,9 @@ module.exports = withTM(
     publicRuntimeConfig: {
       NODE_ENV: env.NODE_ENV,
     },
+    // sassOptions: {
+    //   includePaths: [path.join(__dirname, 'path_to_scss_folder')]
+    // },
     reactStrictMode: true,
   })
 );

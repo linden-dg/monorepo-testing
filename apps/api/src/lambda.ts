@@ -1,7 +1,7 @@
-import { appRouter } from "@spicy-soup/trpc/server";
 import { awsLambdaRequestHandler } from "@trpc/server/adapters/aws-lambda";
 import type { CreateAWSLambdaContextOptions } from "@trpc/server/adapters/aws-lambda";
 import type { APIGatewayEvent } from "aws-lambda";
+import { appRouter } from "@spicy-soup/trpc-server";
 
 interface AuthorizerContext {
   /* eslint-disable @typescript-eslint/naming-convention */

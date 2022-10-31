@@ -1,0 +1,10 @@
+{
+  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "theme",
+  "sourceRoot": "packages/theme",
+  "projectType": "library",
+  "sharedFiles": ["_index.scss", "globals.scss", "css-variables.scss"],
+  "generators": {},
+  "targets": {},
+  "tags": ["scope:shared", "type:styles"]
+}

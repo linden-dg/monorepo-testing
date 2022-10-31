@@ -15,5 +15,3 @@
   $s: "#{$string}";
   @return to-upper-case(str-slice($s, 1, 1)) + str-slice($s, 2);
 }
-
-
