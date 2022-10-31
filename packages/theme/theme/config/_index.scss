@@ -7,13 +7,17 @@
 @use "spacing";
 @use "z" as zi;
 @function to-hsl($color) {
-  @return unquote("#{color.hue($color)/1deg}, #{color.saturation($color)}, #{color.lightness($color)}");
+  @return unquote(
+    "#{color.hue($color)/1deg}, #{color.saturation($color)}, #{color.lightness($color)}"
+  );
 }
 
 @function to-rgb($color) {
-  @return unquote("#{color.red($color)}, #{color.green($color)}, #{color.blue($color)}");
+  @return unquote(
+    "#{color.red($color)}, #{color.green($color)}, #{color.blue($color)}"
+  );
 }
-$test:to-hsl(#ffffff);
+$test: to-hsl(#ffffff);
 
 $defaultTheme: map-merge(
   (

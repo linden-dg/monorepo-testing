@@ -1,6 +1,5 @@
 $themeVariants: (primary, secondary, success, info, warning, danger, grey);
 
-
 /*
   Usage:
   `@include theme-variants using ($key){
@@ -12,8 +11,7 @@ $themeVariants: (primary, secondary, success, info, warning, danger, grey);
   @for $i from 1 through length($themeVariants) {
     $c: nth($themeVariants, $i);
     .#{$c} {
-      @content($c);
+      @content ($c);
     }
   }
 }
-

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { router } from "../lib/trpc";
-import { loggedProcedure } from "../procedures/logger";
+import { loggedProcedure } from "./utils/logged-procedure";
 
 export const helloRouter = router({
   world: loggedProcedure

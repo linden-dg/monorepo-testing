@@ -1,6 +1,6 @@
 import { TRPCError } from "@trpc/server";
-import { middleware } from "../lib/trpc";
-import { loggedProcedure } from "./logger";
+import { middleware } from "../../lib/trpc";
+import { loggedProcedure } from "./logged-procedure";
 
 const isAuthenticated = middleware(async ({ ctx, next }) => {
   /*
@@ -23,4 +23,4 @@ const isAuthenticated = middleware(async ({ ctx, next }) => {
   });
 });
 
-export const authedProcedure = loggedProcedure.use(isAuthenticated);
+export const protectedProcedure = loggedProcedure.use(isAuthenticated);

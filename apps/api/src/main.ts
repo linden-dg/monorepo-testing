@@ -1,4 +1,4 @@
-import { appRouter } from "@spicy-soup/trpc/server";
+import { appRouter } from "@spicy-soup/trpc";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import type { CreateExpressContextOptions } from "@trpc/server/adapters/express";
 import express from "express";

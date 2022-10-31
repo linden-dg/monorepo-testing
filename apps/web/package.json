@@ -12,10 +12,13 @@
     "@spicy-soup/components": "*",
     "@spicy-soup/theme": "*",
     "@spicy-soup/trpc": "*",
+    "@trpc/client": "^10.0.0-proxy-beta.26",
+    "@trpc/next": "^10.0.0-proxy-beta.26",
+    "@tanstack/react-query": "^4.13.0",
+    "@trpc/react-query": "^10.0.0-proxy-beta.26",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.55.0"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@spicy-soup/eslint-config": "*",
@@ -26,6 +29,7 @@
     "@types/spicy-soup": "*",
     "eslint": "7.32.0",
     "next-transpile-modules": "9.0.0",
+    "sass": "^1.55.0",
     "typescript": "^4.5.3"
   }
 }

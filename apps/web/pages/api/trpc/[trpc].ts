@@ -1,5 +1,5 @@
 // src/pages/api/trpc/[trpc].ts
-import { appRouter, createContext } from "@spicy-soup/trpc/server";
+import { appRouter, createContext } from "@spicy-soup/trpc";
 import { createNextApiHandler } from "@trpc/server/adapters/next";
 
 // export API handler

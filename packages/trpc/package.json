@@ -7,21 +7,10 @@
     "build": "tsup ./client.ts ./server.ts --format esm,cjs --dts ",
     "dev": "tsup ./client.ts ./server.ts --format esm,cjs --watch --dts "
   },
-  "exports": {
-    "./client": "./client.ts",
-    "./server": "./server.ts"
-  },
-  "files": [
-    "client.ts",
-    "server.ts"
-  ],
+  "main": "src/index.ts",
   "dependencies": {
     "@spicy-soup/utils": "*",
-    "@trpc/client": "^10.0.0-proxy-beta.26",
-    "@trpc/next": "^10.0.0-proxy-beta.26",
     "@trpc/server": "^10.0.0-proxy-beta.26",
-    "@tanstack/react-query": "^4.13.0",
-    "@trpc/react-query": "^10.0.0-proxy-beta.26",
     "superjson": "^1.11.0",
     "zod": "^3.19.1"
   },

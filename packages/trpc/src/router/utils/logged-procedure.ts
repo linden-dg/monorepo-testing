@@ -1,4 +1,5 @@
-import { t, middleware } from "../lib/trpc";
+import { middleware } from "../../lib/trpc";
+import { publicProcedure } from "./public-procedure";
 
 const logger = middleware(async ({ path, type, next, ctx }) => {
   const start = Date.now();
@@ -16,4 +17,4 @@ const logger = middleware(async ({ path, type, next, ctx }) => {
   return result;
 });
 
-export const loggedProcedure = t.procedure.use(logger);
+export const loggedProcedure = publicProcedure.use(logger);

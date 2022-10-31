@@ -1,17 +1,17 @@
+import type { AppRouter } from "@spicy-soup/trpc";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import { createTRPCNext } from "@trpc/next";
 import type { GetInferenceHelpers } from "@trpc/server";
-import { transformer } from "./src/lib/trpc/transformer";
-import type { AppRouter } from "./src/router";
-
+// import { transformer } from "@spicy-soup/trpc";
+import superjson from "superjson";
 const getBaseUrl = () => {
   if (typeof window !== "undefined") return ""; // browser should use relative url
   // if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
+  return `http://localhost:${process.env["PORT"] ?? 3000}`; // dev SSR should use localhost
 };
 
 export const trpc = createTRPCNext<AppRouter>({
-  config({ ctx }) {
+  config() {
     return {
       /**
        * @link https://tanstack.com/query/v4/docs/reference/QueryClient
@@ -23,7 +23,7 @@ export const trpc = createTRPCNext<AppRouter>({
           },
         },
       },
-      transformer,
+      transformer: superjson,
       links: [
         loggerLink({
           enabled: (opts) =>
