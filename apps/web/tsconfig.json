@@ -1,6 +1,6 @@
 {
   "extends": "@spicy-soup/tsconfig/tsconfig.next.json",
-  "include": ["next-env.d.ts", "@types/spicy-soup", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "jsx": "preserve",

@@ -1,0 +1,3 @@
+{
+  "extends": "@spicy-soup/tsconfig/tsconfig.base.json"
+}

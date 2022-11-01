@@ -12,7 +12,7 @@ type CollectionDatum = unknown;
 type ObjectKey = string | number | symbol;
 
 export const keyBy = <Datum extends CollectionDatum>(
-  collection: Datum[] | TObjectAny = [],
+  collection: Datum[] | Record<string, Datum> = [],
   key?: keyof Datum | KeyAccessor<Datum>,
   reducerFunction?: string | Reducer<Datum>
 ) =>

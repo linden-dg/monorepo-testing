@@ -1,5 +1,5 @@
 {
   "extends": "@spicy-soup/tsconfig/tsconfig.react.json",
-  "include": ["@types/spicy-soup", "**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["dist", "build", "node_modules"]
 }

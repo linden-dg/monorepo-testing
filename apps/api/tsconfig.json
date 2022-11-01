@@ -1,6 +1,6 @@
 {
-  "extends": "@spicy-soup/tsconfig/tsconfig.base.json",
-  "include": ["@types/spicy-soup", "**/*.ts"],
+  "extends": "@spicy-soup/tsconfig/tsconfig.node.json",
+  "include": ["**/*.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": ".",

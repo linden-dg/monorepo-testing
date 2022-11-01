@@ -1,6 +1,5 @@
-declare interface TObjectAny {
-  [key: string]: any;
-}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare type TObjectAny = Record<string, any>;
 
 declare module "*.module.scss";
 
@@ -17,10 +16,5 @@ declare type ThemeVariants =
 
 type FillVariants = "filled" | "outline" | "empty" | "lightFilled";
 
-declare interface DefaultProps {
-  /** css class name  */
-  className?: string;
-  /** CSS override styles */
-  style?: React.CSSProperties;
-  children?: React.ReactNode;
-}
+declare type DefaultProps<E extends React.ElementType = "div"> =
+  React.ComponentPropsWithoutRef<E>;

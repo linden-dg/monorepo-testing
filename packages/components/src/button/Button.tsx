@@ -1,10 +1,9 @@
 import cx from "clsx";
 import React from "react";
-import type { ComponentPropsWithoutRef } from "react";
 import { LoadingDots } from "../loading/dots/LoadingDots";
 import styles from "./Button.module.scss";
 
-export interface TButton extends ComponentPropsWithoutRef<"button"> {
+export interface TButton extends DefaultProps<"button"> {
   /** Alternative color variations */
   theme?: ThemeVariants;
 

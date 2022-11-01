@@ -5,6 +5,10 @@
   "files": [
     "tsconfig.base.json",
     "tsconfig.next.json",
+    "tsconfig.node.json",
     "tsconfig.react.json"
-  ]
+  ],
+  "devDependencies": {
+    "@types/spicy-soup": "*"
+  }
 }

@@ -21,7 +21,6 @@
   "devDependencies": {
     "@spicy-soup/eslint-config": "*",
     "@spicy-soup/tsconfig": "*",
-    "@types/spicy-soup": "*",
     "tsup": "^6.3.0",
     "type-fest": "^3.1.0",
     "typescript": "^4.5.2"
