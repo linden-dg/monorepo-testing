@@ -7,11 +7,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
-    "dev:web": "turbo run dev --parallel --scope=web",
-    "test": "turbo run test",
-    "lint": "turbo run lint",
+    "build": "nx build",
+    "dev": "nx run-many --parallel --target=dev --projects=web,api",
+    "dev:web": "nx dev web",
+    "test": "nx run-many --target=test",
+    "lint": "nx run-many --target=lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"
   },
@@ -19,10 +19,21 @@
     "@spicy-soup/eslint-config": "*",
     "husky": "^8.0.1",
     "prettier": "latest",
-    "turbo": "latest"
+    "nx": "15.0.4"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "npm@8.1.4"
+  "packageManager": "npm@8.1.4",
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/ui/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  }
 }
