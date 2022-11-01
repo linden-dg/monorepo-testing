@@ -1,9 +1,9 @@
 import { Button, LoadingCircle } from "@spicy-soup/components";
 import { trpc } from "../utils/trpc-client";
-import type { TAppRouter } from "../utils/trpc-client";
+import type { TAppRouterInputs } from "../utils/trpc-client";
 import styles from "./Home.module.scss";
 
-const input: TAppRouter["hello"]["world"]["input"] = { text: "New York" };
+const input: TAppRouterInputs["hello"]["world"] = { text: "New York" };
 export default function Web() {
   const { data: healthCheck } = trpc.healthz.useQuery();
   const { data } = trpc.hello.world.useQuery(input);

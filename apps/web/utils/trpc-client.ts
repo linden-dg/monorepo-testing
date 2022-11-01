@@ -1,7 +1,7 @@
 import type { AppRouter } from "@spicy-soup/trpc";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import { createTRPCNext } from "@trpc/next";
-import type { GetInferenceHelpers } from "@trpc/server";
+import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 // import { transformer } from "@spicy-soup/trpc";
 import superjson from "superjson";
 const getBaseUrl = () => {
@@ -46,4 +46,5 @@ export const trpc = createTRPCNext<AppRouter>({
   ssr: false,
 });
 
-export type TAppRouter = GetInferenceHelpers<AppRouter>;
+export type TAppRouterInputs = inferRouterInputs<AppRouter>;
+export type TAppRouterOutputs = inferRouterOutputs<AppRouter>;

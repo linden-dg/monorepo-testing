@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "",
   "types": "index.d.ts",
-  "devDependencies": {
+  "peerDependencies": {
     "@types/react": "^18.0.21"
   }
 }
