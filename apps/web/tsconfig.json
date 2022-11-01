@@ -4,6 +4,7 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "jsx": "preserve",
+    "moduleResolution": "nodenext",
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]

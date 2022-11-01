@@ -4,10 +4,26 @@
   "sideEffects": false,
   "scripts": {
     "lint": "eslint \"src/**/*.ts*\"",
-    "build": "tsup src/index.ts --format esm,cjs --dts ",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts "
+    "build": "tsup src/index.ts src/transformer.ts --format esm,cjs --dts ",
+    "dev": "tsup src/index.ts src/transformer.ts --format esm,cjs --watch --dts "
   },
-  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./transformer": {
+      "import": "./dist/transformer.mjs",
+      "require": "./dist/transformer.js",
+      "default": "./dist/transformer.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
   "dependencies": {
     "@spicy-soup/utils": "*",
     "@trpc/server": "^10.0.0-proxy-beta.26",

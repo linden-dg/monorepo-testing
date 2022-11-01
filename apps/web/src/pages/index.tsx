@@ -1,6 +1,6 @@
 import { Button, LoadingCircle } from "@spicy-soup/components";
-import { trpc } from "../utils/trpc-client";
-import type { TAppRouterInputs } from "../utils/trpc-client";
+import { trpc } from "~/utils/trpc-client";
+import type { TAppRouterInputs } from "~/utils/trpc-client";
 import styles from "./Home.module.scss";
 
 const input: TAppRouterInputs["hello"]["world"] = { text: "New York" };

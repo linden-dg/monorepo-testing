@@ -1,9 +1,9 @@
 import type { AppRouter } from "@spicy-soup/trpc";
+import { transformer } from "@spicy-soup/trpc/transformer";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import { createTRPCNext } from "@trpc/next";
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
-// import { transformer } from "@spicy-soup/trpc";
-import superjson from "superjson";
+
 const getBaseUrl = () => {
   if (typeof window !== "undefined") return ""; // browser should use relative url
   // if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
@@ -23,7 +23,7 @@ export const trpc = createTRPCNext<AppRouter>({
           },
         },
       },
-      transformer: superjson,
+      transformer,
       links: [
         loggerLink({
           enabled: (opts) =>
