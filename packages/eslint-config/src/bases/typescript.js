@@ -137,7 +137,7 @@ module.exports = {
         trailingUnderscore: "allowSingleOrDouble",
       },
       {
-        selector: ["typeAlias", "interface"],
+        selector: ["typeAlias", "interface", "enum"],
         format: ["PascalCase"],
       },
       {
@@ -149,6 +149,10 @@ module.exports = {
       {
         selector: ["typeParameter"],
         format: ["PascalCase"],
+      },
+      {
+        selector: ["enumMember"],
+        format: ["camelCase", "PascalCase", "snake_case", "UPPER_CASE"],
       },
     ],
   },

@@ -1,5 +1,5 @@
 import { initTRPC } from "@trpc/server";
-import type { Context } from "./context";
+import type { Context } from "./context/next-auth";
 import { transformer } from "./transformer";
 
 export const t = initTRPC.context<Context>().create({

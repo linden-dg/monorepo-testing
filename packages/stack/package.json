@@ -1,0 +1,15 @@
+{
+  "name": "@spicy-soup/cdk",
+  "version": "0.1.0",
+  "files": [
+    "helpers/index.ts",
+    "constructs/index.ts"
+  ],
+  "dependencies": {
+    "aws-jwt-verify": "^3.2.0"
+  },
+  "devDependencies": {
+    "aws-cdk-lib": "^2.50.0",
+    "constructs": "^10.1.150"
+  }
+}

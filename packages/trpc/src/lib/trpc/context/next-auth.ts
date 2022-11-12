@@ -1,22 +1,10 @@
 import type { inferAsyncReturnType } from "@trpc/server";
 import type { CreateNextContextOptions } from "@trpc/server/adapters/next";
+import type { CreateContextOptions } from "./common";
 import { getServerAuthSession } from "./get-server-auth-session";
 // import { Session } from "next-auth";
 // import { prisma } from "~/lib/prisma/prisma";
 // import { getServerAuthSession } from "~/lib/trpc/get-server-auth-session";
-
-type ISession = {
-  user: {
-    id: string;
-    name: string;
-    email: string;
-    role?: string;
-    groups?: string[];
-  };
-};
-type CreateContextOptions = {
-  session: ISession | null;
-};
 
 /** Use this helper for:
  * - testing, so we dont have to mock Next.js' req/res
