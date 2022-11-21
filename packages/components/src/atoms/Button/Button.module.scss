@@ -1,0 +1,36 @@
+.button {
+  @apply pointer-events-auto relative rounded-md py-2 px-4 leading-5;
+  transition: background-color, border-color, box-shadow, color,
+    transform 200ms ease-in;
+
+  &:focus {
+    @apply outline-none;
+  }
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+    &::after {
+      @apply opacity-100;
+    }
+    &:active {
+      &::after {
+        @apply opacity-0;
+      }
+    }
+  }
+  &:active {
+    @apply scale-95 shadow-inner;
+  }
+  &::after {
+    @apply absolute inset-0 opacity-0 shadow-md;
+    content: "";
+    transition: opacity 200ms ease-in;
+  }
+
+  &.rounded {
+    @apply rounded-full px-6;
+    &::after {
+      @apply rounded-full;
+    }
+  }
+}
