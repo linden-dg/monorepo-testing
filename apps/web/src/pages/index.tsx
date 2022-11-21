@@ -1,4 +1,5 @@
 import { Button, Flex, Heading, LoadingCircle } from "@spicy-soup/components";
+import { useTheme } from "next-themes";
 import { trpc } from "~/utils/trpc-client";
 import type { TAppRouterInputs } from "~/utils/trpc-client";
 
@@ -6,6 +7,7 @@ const input: TAppRouterInputs["hello"]["world"] = { text: "New York" };
 export default function Web() {
   const { data: healthCheck } = trpc.healthz.useQuery();
   const { data } = trpc.hello.world.useQuery(input);
+  const { theme, setTheme } = useTheme();
 
   // const utils = trpc.useContext();
   return (
@@ -34,7 +36,12 @@ export default function Web() {
       <br />
 
       <Flex direction={"horizontal"} className="py-28 px-14 dark:bg-slate-800">
-        <Button variant={"filled"}>Popsicle</Button>
+        <Button
+          variant={"filled"}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          Switch Theme
+        </Button>
 
         <Button theme="success" variant={"outline"} rounded uppercase>
           Popsicle

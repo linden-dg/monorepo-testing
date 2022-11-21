@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const tailwindColors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 const path = require("path");
 const { freefall, sunflower, watermelon, meadow, gigas } = require("./palette");
 
@@ -37,6 +38,9 @@ module.exports = {
     colors: {
       ...tailwindColors,
       ...colors,
+    },
+    fontFamily: {
+      sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [],

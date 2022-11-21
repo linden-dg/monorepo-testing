@@ -1,4 +1,7 @@
 @tailwind base;
-
+@layer base {
+  @import "css-variables";
+  @import "global";
+}
 @tailwind components;
 @tailwind utilities;
