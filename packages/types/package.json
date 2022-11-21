@@ -1,8 +1,11 @@
 {
   "name": "@types/spicy-soup",
   "version": "1.0.0",
-  "main": "",
+  "main": "index.d.ts",
   "types": "index.d.ts",
+  "scripts": {
+    "clean": "rimraf .turbo node_modules"
+  },
   "peerDependencies": {
     "@types/react": "^18.0.21"
   }

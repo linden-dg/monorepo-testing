@@ -16,7 +16,8 @@
   "scripts": {
     "build": "tsup src/collections/index.ts src/type-guards/index.ts src/format/* --dts",
     "dev": "tsup src/collections/index.ts src/type-guards/index.ts src/format/* --dts --watch",
-    "lint": "eslint \"src/**/*.ts*\""
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rimraf .turbo node_modules dist"
   },
   "devDependencies": {
     "@spicy-soup/eslint-config": "*",

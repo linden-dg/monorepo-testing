@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint \"src/**/*.ts*\"",
     "build": "tsup src/index.ts src/transformer.ts --format esm,cjs --dts ",
-    "dev": "tsup src/index.ts src/transformer.ts --format esm,cjs --watch --dts "
+    "dev": "tsup src/index.ts src/transformer.ts --format esm,cjs --watch --dts ",
+    "clean": "rimraf .turbo node_modules dist"
   },
   "exports": {
     ".": {

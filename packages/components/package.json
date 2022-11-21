@@ -5,7 +5,9 @@
   "main": "./src/index.tsx",
   "types": "./src/index.tsx",
   "scripts": {
-    "lint": "eslint \"src/**/*.ts*\""
+    "lint": "eslint \"src/**/*.ts*\"",
+    "test": "vitest run",
+    "clean": "rimraf .turbo node_modules"
   },
   "dependencies": {
     "@spicy-soup/theme": "*",
@@ -13,9 +15,17 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@spicy-soup/tsconfig": "*",
     "@spicy-soup/eslint-config": "*",
+    "@spicy-soup/tsconfig": "*",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/spicy-soup": "*",
+    "@vitejs/plugin-react": "^2.2.0",
+    "class-variance-authority": "^0.3.0",
+    "jsdom": "^20.0.2",
     "sass": "^1.55.0",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "vite": "^3.2.3",
+    "vitest": "^0.25.1"
   }
 }

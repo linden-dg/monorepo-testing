@@ -29,5 +29,6 @@ module.exports = withTM(
       NODE_ENV: env.NODE_ENV,
     },
     reactStrictMode: true,
+    swcMinify: true,
   })
 );
