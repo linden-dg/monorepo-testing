@@ -1,0 +1,59 @@
+@use "../utils" as utils;
+
+@mixin tokens {
+  --#{utils.$cssVarPrefix}-color-bg: theme("colors.gray.50");
+
+  --#{utils.$cssVarPrefix}-color-body: theme("colors.slate.900");
+  --#{utils.$cssVarPrefix}-color-headings: theme("colors.slate.700");
+  --#{utils.$cssVarPrefix}-color-strong: theme("colors.slate.900");
+  --#{utils.$cssVarPrefix}-color-selection: theme("colors.fuchsia.300");
+
+  --#{utils.$cssVarPrefix}-color-links: theme("colors.info.500");
+  --#{utils.$cssVarPrefix}-color-links-hover: theme("colors.info.700");
+
+  --#{utils.$cssVarPrefix}-color-hr: theme("colors.slate.300");
+  --#{utils.$cssVarPrefix}-color-captions: theme("colors.slate.500");
+
+  --#{utils.$cssVarPrefix}-color-counters: theme("colors.slate.400");
+  --#{utils.$cssVarPrefix}-color-bullets: theme("colors.slate.300");
+
+  --#{utils.$cssVarPrefix}-color-quotes: theme("colors.slate.900");
+  --#{utils.$cssVarPrefix}-color-quote-borders: theme("colors.slate.200");
+
+  --#{utils.$cssVarPrefix}-color-code: theme("colors.danger.600");
+  --#{utils.$cssVarPrefix}-color-code-bg: theme("colors.slate.200");
+  --#{utils.$cssVarPrefix}-color-pre-code: theme("colors.slate.200");
+  --#{utils.$cssVarPrefix}-color-pre-bg: theme("colors.slate.800");
+
+  --#{utils.$cssVarPrefix}-color-th-borders: theme("colors.slate.300");
+  --#{utils.$cssVarPrefix}-color-td-borders: theme("colors.slate.200");
+}
+
+@mixin darkTokens {
+  --#{utils.$cssVarPrefix}-color-bg: theme("colors.slate.900");
+
+  --#{utils.$cssVarPrefix}-color-body: theme("colors.slate.400");
+  --#{utils.$cssVarPrefix}-color-headings: theme("colors.slate.300");
+  --#{utils.$cssVarPrefix}-color-strong: theme("colors.slate.300");
+  --#{utils.$cssVarPrefix}-color-selection: theme("colors.fuchsia.900");
+
+  --#{utils.$cssVarPrefix}-color-links: theme("colors.info.400");
+  --#{utils.$cssVarPrefix}-color-links-hover: theme("colors.info.600");
+
+  --#{utils.$cssVarPrefix}-color-hr: theme("colors.slate.700");
+  --#{utils.$cssVarPrefix}-color-captions: theme("colors.slate.300");
+
+  --#{utils.$cssVarPrefix}-color-counters: theme("colors.slate.500");
+  --#{utils.$cssVarPrefix}-color-bullets: theme("colors.slate.500");
+
+  --#{utils.$cssVarPrefix}-color-quotes: theme("colors.slate.300");
+  --#{utils.$cssVarPrefix}-color-quote-borders: theme("colors.slate.700");
+
+  --#{utils.$cssVarPrefix}-color-code: theme("colors.pink.500");
+  --#{utils.$cssVarPrefix}-color-code-bg: theme("colors.slate.700");
+  --#{utils.$cssVarPrefix}-color-pre-code: theme("colors.slate.300");
+  --#{utils.$cssVarPrefix}-color-pre-bg: theme("colors.slate.800");
+
+  --#{utils.$cssVarPrefix}-color-th-borders: theme("colors.slate.700");
+  --#{utils.$cssVarPrefix}-color-td-borders: theme("colors.slate.800");
+}

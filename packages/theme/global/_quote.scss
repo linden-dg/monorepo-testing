@@ -1,0 +1,31 @@
+@use "../utils" as utils;
+
+blockquote {
+  font-weight: theme("fontWeight.medium");
+  font-style: italic;
+  color: utils.css-var(color, quotes, theme("colors.slate.900"));
+  border-left-width: 0.25rem;
+  border-left-color: utils.css-var(color, quote-borders, theme("colors.slate.200"));
+  quotes: "\201C" "\201D" "\2018" "\2019";
+
+  @apply my-7 pl-4;
+
+  //@include desktop{
+  //  @apply my-8 pl-6;
+  //}
+
+  //p {
+  //  &:first-of-type::before {
+  // //   opacity: 0.6;
+  //    content: open-quote;
+  //  }
+  //  &:last-of-type::after {
+  // //   opacity: 0.6;
+  //    content: close-quote;
+  //  }
+  //}
+  strong,
+  code {
+    color: inherit;
+  }
+}

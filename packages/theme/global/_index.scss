@@ -1,2 +1,6 @@
-@use "base";
-@use "typography";
+@forward "common";
+@forward "heading";
+@forward "code";
+@forward "list";
+@forward "quote";
+@forward "table";

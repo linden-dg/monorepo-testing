@@ -1,19 +1,17 @@
-@use "../theme/get-color" as theme;
-
 @mixin subtle-scrollbar {
   &::-webkit-scrollbar-track {
     box-shadow: none;
-    background-color: theme.getColor(white);
+    @apply bg-slate-200 dark:bg-slate-700;
   }
 
   &::-webkit-scrollbar {
     width: 6px;
     height: 12px;
-    background-color: theme.getColor(grey, 100);
+    @apply bg-slate-200 dark:bg-slate-800;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: theme.getColor(grey, light);
+    @apply bg-slate-400 dark:bg-slate-500;
     border-radius: 3px;
     border: 0;
   }
@@ -22,17 +20,17 @@
 @mixin subtle-horizontal-scrollbar {
   &::-webkit-scrollbar-track {
     box-shadow: none;
-    background-color: theme.getColor(white);
+    @apply bg-slate-200 dark:bg-slate-700;
   }
 
   &::-webkit-scrollbar {
     width: 12px;
     height: 6px;
-    background-color: theme.getColor(grey, 100);
+    @apply bg-slate-200 dark:bg-slate-700;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: theme.getColor(grey, light);
+    @apply bg-slate-400 dark:bg-slate-500;
     border-radius: 3px;
     border: 0;
   }

@@ -1,0 +1,55 @@
+@use "../utils" as utils;
+
+ol,
+ul {
+  @apply my-5 pl-8;
+  & > li {
+    @apply my-2 pl-2;
+    & > *:first-child {
+      @apply mt-5;
+    }
+    & > *:last-child {
+      @apply mb-5;
+    }
+    p {
+      @apply my-3;
+    }
+  }
+  & ul,
+  & ol {
+    @apply my-1;
+  }
+}
+
+ol {
+  list-style-type: decimal;
+  & > li::marker {
+    font-weight: theme("fontWeight.normal");
+    color: utils.css-var(color, counters, theme("colors.slate.500"));
+  }
+
+  &[type="A"] {
+    list-style-type: upper-alpha;
+  }
+  &[type="a"] {
+    list-style-type: lower-alpha;
+  }
+
+  &[type="i"] {
+    list-style-type: lower-roman;
+  }
+  &[type="I"] {
+    list-style-type: upper-roman;
+  }
+  &[type="1"] {
+    list-style-type: decimal;
+  }
+}
+
+ul {
+  list-style-type: disc;
+  & > li::marker {
+    font-weight: theme("fontWeight.normal");
+    color: utils.css-var(color, bullets, theme("colors.slate.300"));
+  }
+}

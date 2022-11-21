@@ -6,27 +6,3 @@ $fontBase: 16px;
 @function rem($size, $base: $fontBase) {
   @return math.div($size, $base) * 1rem;
 }
-
-// modified from JS implementation at https://github.com/Owumaro/text-stroke-generator/blob/master/index.js
-@mixin text-outline($color: #000, $unit: 1) {
-  //text-shadow: $color 1px 0px 0px,
-  //    $color 0.540302px 0.841471px 0px,
-  //    $color -0.416147px 0.909297px 0px,
-  //    $color -0.989992px 0.14112px 0px,
-  //    $color -0.653644px -0.756802px 0px,
-  //    $color 0.283662px -0.958924px 0px,
-  //    $color 0.96017px -0.279415px 0px;
-
-  $size: math.div($unit, $unit * 0 + 1); //strip out `px` from unit
-  $angle: 0;
-  $shadow: ();
-  @while $angle < (2 * math.$pi) {
-    $shadow: append(
-      $shadow,
-      (#{math.cos($angle) * $size}px #{math.sin($angle) * $size}px #{$color}),
-      $separator: comma
-    );
-    $angle: $angle + math.div(1, $size);
-  }
-  text-shadow: $shadow;
-}

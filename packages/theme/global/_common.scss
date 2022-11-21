@@ -1,0 +1,47 @@
+@use "../utils" as utils;
+
+body {
+  background-color: utils.css-var(color, bg, theme("colors.white"));
+  color: utils.css-var(color, body, theme("colors.slate.800"));
+  font-size: 16px;
+  line-height: 1.5;
+  @include utils.subtle-scrollbar();
+}
+
+a {
+  color: utils.css-var(color, links, theme("colors.primary.600"));
+  text-decoration: underline;
+  font-weight: theme("fontWeight.medium");
+  &:hover{
+    color: utils.css-var(color, links-hover, theme("colors.primary.800"));
+  }
+  strong,
+  code {
+    color: inherit;
+  }
+}
+
+p {
+  @apply my-5;
+  color: utils.css-var(color, body, theme("colors.slate.800"));
+}
+
+strong {
+  color: utils.css-var(color, strong, theme("colors.slate.900"));
+  font-weight: theme("fontWeight.semibold");
+}
+
+hr {
+  border-color: utils.css-var(color, hr, theme("colors.slate.200"));
+  border-top-width: 1px;
+}
+
+figcaption {
+  color: utils.css-var(color, captions, theme("colors.slate.500"));
+  font-size: 0.875em;
+  @apply mt-3.5 leading-snug;
+}
+
+::selection {
+  background-color: utils.css-var(color, selection, theme("colors.primary.200"));
+}

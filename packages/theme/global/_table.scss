@@ -1,0 +1,56 @@
+@use "../utils" as utils;
+
+table {
+  @apply my-8 w-full table-auto text-left;
+}
+
+thead {
+  @apply border-b;
+  border-bottom-color: utils.css-var(
+    color,
+    th-borders,
+    theme("colors.slate.300")
+  );
+  th {
+    @apply align-bottom font-semibold px-2 pb-2;
+    color: utils.css-var(color, headings, theme("colors.slate.700"));
+    strong,
+    code {
+      color: inherit;
+    }
+  }
+}
+tbody {
+  tr {
+    @apply border-b;
+    border-bottom-color: utils.css-var(
+      color,
+      td-borders,
+      theme("colors.slate.200")
+    );
+    &:last-child {
+      @apply border-b-0;
+    }
+
+  }
+  td {
+    @apply align-baseline p-2;
+  }
+}
+tr {
+  & td, & th{
+    &:first-child{
+      @apply pl-0;
+    }
+    &:last-child{
+      @apply pr-0;
+    }
+  }
+}
+tfoot {
+  @apply border-b;
+  border-top-color: utils.css-var(color, th-borders, theme("colors.slate.300"));
+  td {
+    @apply align-top;
+  }
+}

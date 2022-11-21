@@ -1,11 +1,10 @@
-@use "functions" as fn;
 $cssVarPrefix: "spicy";
 
 @function get-var-name($category, $val, $prefix: $cssVarPrefix) {
   @return --#{$prefix}-#{$category}-#{$val};
 }
 
-@function get-var($category, $val, $fallback: false, $prefix: $cssVarPrefix) {
+@function css-var($category, $val, $fallback: false, $prefix: $cssVarPrefix) {
   @if ($fallback) {
     @return var(get-var-name($category, $val, $prefix), $fallback);
   } @else {

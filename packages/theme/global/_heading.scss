@@ -1,0 +1,65 @@
+@use "../utils" as utils;
+
+
+
+h1 {
+  @apply mt-0 font-extrabold;
+  font-size: utils.rem(36px); // 4xl
+  line-height: 1.15;
+  margin-bottom: 0.9em;
+  strong {
+    @apply font-black;
+  }
+}
+
+h2 {
+  @apply font-bold;
+  font-size: utils.rem(26px); // 2xl
+  line-height: 1.25;
+  margin-top: 1.8em;
+  margin-bottom: 0.8em;
+  strong {
+    @apply font-extrabold;
+  }
+}
+h3 {
+  font-size: utils.rem(22px); // xl
+  line-height: 1.375;
+  margin-bottom: 0.6em;
+  margin-top: 1.6em;
+}
+
+h4 {
+  font-size: utils.rem(18px); // lg
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+}
+h5 {
+  @apply mt-1 mb-1.5 text-base;
+}
+
+h3,
+h4,
+h5 {
+  @apply font-semibold;
+  strong {
+    @apply font-bold;
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: utils.css-var(color, headings, theme("colors.slate.700"));
+  strong,
+  code {
+    color: inherit;
+  }
+  & + * {
+    @apply mt-0;
+  }
+}
