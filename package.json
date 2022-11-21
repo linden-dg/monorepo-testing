@@ -18,8 +18,10 @@
   },
   "devDependencies": {
     "@spicy-soup/eslint-config": "*",
+    "@spicy-soup/theme": "*",
     "husky": "^8.0.1",
     "prettier": "latest",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "turbo": "latest"
   },
   "engines": {

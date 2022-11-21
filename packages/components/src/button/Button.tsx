@@ -35,7 +35,8 @@ export const Button = ({
       variant && styles[variant],
       rounded && styles.rounded,
       submitting && styles.submitting,
-      className
+      className,
+      "pointer-events-auto rounded-md bg-primary-600 py-2 px-3 text-[0.8125rem] font-semibold leading-5 text-white"
     )}
     type={type}
     disabled={disabled || submitting}

@@ -48,7 +48,7 @@
 }
 
 .loader::after {
-  background: theme.getColor(background);
+  @apply bg-primary-800;
   //background: theme.getColor(primary, 200);
   inset: 5px;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5) inset;

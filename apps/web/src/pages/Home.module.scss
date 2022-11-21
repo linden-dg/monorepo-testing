@@ -1,4 +1,4 @@
-@use "../../../../node_modules/@spicy-soup/theme/index" as theme;
+@use "@spicy-soup/theme" as theme;
 
 .root {
   background-color: #fff;
@@ -31,7 +31,7 @@ $polygon: 0% 0%, 100% 0%, 100% 40%, 0% 100%;
   //  background-color: theme.getColor(background);
   //}
   &:before {
-    background-color: theme.getColor(background);
+    @apply bg-primary-800;
     content: "";
     position: absolute;
     left: 0;
